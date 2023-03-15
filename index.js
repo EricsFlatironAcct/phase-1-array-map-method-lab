@@ -12,5 +12,13 @@ const tutorials = [
 ];
 
 const titleCased = () => {
-  return tutorials
+  //maps tutorials into individual sentences
+  return tutorials.map(function(sentence){
+    //splits each sentence into an array, then maps the array
+    return sentence.split(" ").map(function(word){
+      //Forces the first character to be upper case and returns each word back to the sentence (array)
+      return word.slice(0,1).toUpperCase()+word.slice(1);
+    //turns the sentence array back into a string with spaces
+    }).join(" ");
+  })
 }
